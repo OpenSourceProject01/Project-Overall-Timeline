@@ -1,0 +1,26 @@
+show tables;
+
+drop table content;
+
+CREATE TABLE `member` (
+  `id` bigint not null AUTO_INCREMENT,
+  `pwd` varchar(20) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='private';
+
+alter table member add birthday int NOT NULL;
+
+
+CREATE TABLE `latter` (
+  `id` bigint not null AUTO_INCREMENT,
+  `weather` int not null,
+  `created_at` int not null,
+  `deleted_at` int not null,
+  `content` varchar(500) not null,
+  `user_id` bigint not null,
+  `is_temp` Boolean default 0,
+  `is_deleted` Boolean default 0,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='private';
